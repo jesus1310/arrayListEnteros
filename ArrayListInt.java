@@ -58,17 +58,29 @@ public class ArrayListInt
     public void clear(){
         listaEnteros = new int[0];
     }
-        
+
     /**
      * Método para buscar un elemento en la lista pasado por parametro
      * Si lo encuentra devuelve true, si no devolvera false
      */
     public boolean contains(int elemento){
         boolean encontrado = false;
-        for (int numero : listaEnteros){
-            if (elemento == numero){
+        for (int indice = 0; indice < listaEnteros.length; indice++){
+            if (elemento == listaEnteros[indice]){
                 encontrado = true;
             }
+        }
+        return encontrado;
+    }
+
+    /**
+     * Método que devuelve un elemento localizado en la posicion indicada por parámetro
+     * Si la posicion no es válida devuelve -1
+     */
+    public int get(int posicion){
+        int encontrado = -1;
+        if ((posicion >= 0) && (posicion < listaEnteros.length)){
+            encontrado = listaEnteros[posicion];
         }
         return encontrado;
     }
