@@ -34,18 +34,18 @@ public class ArrayListInt
      * indicando por parámetro en qué posición se almacenarán
      * Si la posición no es válida no hace nada
      */
-    public void add(int elemento,int posicion){
+    public void add(int posicion,int elemento){
         int tamaño = listaEnteros.length;
-        if ((posicion >= 0) && (posicion < tamaño)){
+        if ((posicion >= 0) && (posicion <= tamaño)){
             int[] temp = new int[tamaño + 1];
             int indiceListaEnteros = 0;
-            for (int indiceTemp = 0; tamaño > indiceListaEnteros; indiceTemp++){
+            for (int indiceTemp = 0; tamaño >= indiceListaEnteros; indiceListaEnteros++){
                 if (posicion == indiceTemp){
                     temp[indiceTemp] = elemento;
                 }
                 else {
-                    temp[indiceTemp] = listaEnteros[indiceListaEnteros];
-                    indiceListaEnteros++;
+                    temp[indiceListaEnteros] = listaEnteros[indiceTemp];
+                    indiceTemp++;
                 }
             }
             listaEnteros = temp;
@@ -122,5 +122,29 @@ public class ArrayListInt
             estaVacia = true;
         }
         return estaVacia;
+    }
+    
+    /**
+     * Método que permite eliminar un elemento de la lista
+     * Los demas se desplazarán una posición si fuera necesario
+     */
+    public int remove(int posicion){
+        int elemento = -1;
+        int tamaño = listaEnteros.length;
+        if ((posicion >= 0) && (posicion < tamaño)){
+            int[] temp = new int[tamaño - 1];
+            int indiceListaEnteros = 0;
+            for (int indiceTemp = 0; tamaño > indiceListaEnteros; indiceListaEnteros++){
+                if (posicion == indiceListaEnteros){
+                    elemento = listaEnteros[indiceListaEnteros];
+                }
+                else {
+                    temp[indiceTemp] = listaEnteros[indiceListaEnteros];
+                    indiceTemp++;
+                }
+            }
+            listaEnteros = temp;
+        }
+        return elemento;
     }
 }
