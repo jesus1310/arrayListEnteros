@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Write a description of class ArrayListInt here.
  * 
@@ -16,5 +14,18 @@ public class ArrayListInt
     public ArrayListInt()
     {
         listaEnteros = new int[0];
+    }
+    
+    /**
+     * Método para añadir elementos a la lista
+     */
+    public void add(int elemento){
+        int tamaño = listaEnteros.length;
+        int[] temp = new int[tamaño + 1];
+        for (int cont = 0; cont < tamaño; cont++){
+            temp[cont] = listaEnteros[cont];
+        }
+        temp[tamaño] = elemento;
+        listaEnteros = temp;
     }
 }
