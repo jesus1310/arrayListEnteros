@@ -48,6 +48,7 @@ public class ArrayListInt
                     indiceListaEnteros++;
                 }
             }
+            listaEnteros = temp;
         }
     }
 
@@ -57,8 +58,18 @@ public class ArrayListInt
     public void clear(){
         listaEnteros = new int[0];
     }
-    
+        
     /**
-     * 
+     * Método para buscar un elemento en la lista pasado por parametro
+     * Si lo encuentra devuelve true, si no devolvera false
      */
+    public boolean contains(int elemento){
+        boolean encontrado = false;
+        for (int numero : listaEnteros){
+            if (elemento == numero){
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
 }
