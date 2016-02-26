@@ -15,7 +15,7 @@ public class ArrayListInt
     {
         listaEnteros = new int[0];
     }
-    
+
     /**
      * Método para añadir elementos a la lista
      */
@@ -28,7 +28,7 @@ public class ArrayListInt
         temp[tamaño] = elemento;
         listaEnteros = temp;
     }
-    
+
     /**
      * Método para añadir elementos a la lista, 
      * indicando por parámetro en qué posición se almacenarán
@@ -38,7 +38,6 @@ public class ArrayListInt
         int tamaño = listaEnteros.length;
         if ((posicion >= 0) && (posicion < tamaño)){
             int[] temp = new int[tamaño + 1];
-            
             int indiceListaEnteros = 0;
             for (int indiceTemp = 0; tamaño > indiceListaEnteros; indiceTemp++){
                 if (posicion == indiceTemp){
@@ -51,4 +50,15 @@ public class ArrayListInt
             }
         }
     }
+
+    /**
+     * Método para vaciar la lista
+     */
+    public void clear(){
+        listaEnteros = new int[0];
+    }
+    
+    /**
+     * 
+     */
 }
