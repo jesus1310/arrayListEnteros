@@ -94,4 +94,21 @@ public class ArrayListInt
             listaEnteros[posicion] = elemento;
         }
     }
+    
+    /**
+     * Método que ddevuelve el indice de la primera coincidencia con el elemento pasado por parámetro
+     * Si no encuentra ninguno devuelve -1
+     */
+    public int indexOf(int elemento){
+        int indice = -1;
+        int cont = 0;
+        boolean encontrado = false;
+        for (cont = 0; (cont < listaEnteros.length) && (!encontrado); cont++){
+            if (listaEnteros[cont] == elemento){
+                encontrado = true;
+                indice = cont;
+            }
+        }
+        return indice;
+    }
 }
