@@ -84,4 +84,14 @@ public class ArrayListInt
         }
         return encontrado;
     }
+    
+    /**
+     * Método que modifica el valor de un elemento situado en la posicion pasada por parámetro por otro valor pasado por parámetro
+     * Si la posicion no es válida no hace nada
+     */
+    public void set(int posicion,int elemento){
+        if ((posicion >= 0) && (posicion < listaEnteros.length)){
+            listaEnteros[posicion] = elemento;
+        }
+    }
 }
