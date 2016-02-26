@@ -147,4 +147,11 @@ public class ArrayListInt
         }
         return elemento;
     }
+    
+    /**
+     * Método que devuelve el tamaño de la lista
+     */
+    public int size(){
+        return listaEnteros.length;
+    }
 }
