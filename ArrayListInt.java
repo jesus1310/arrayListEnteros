@@ -111,4 +111,16 @@ public class ArrayListInt
         }
         return indice;
     }
+    
+    /**
+     * Método que nos permite saber si la lista está vacía
+     * Si lo está devuelve true, si no devuelve false
+     */
+    public boolean isEmpty(){
+        boolean estaVacia = false;
+        if (listaEnteros.length == 0){
+            estaVacia = true;
+        }
+        return estaVacia;
+    }
 }
